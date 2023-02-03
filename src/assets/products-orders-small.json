@@ -1,0 +1,64 @@
+{
+	"data": [
+		{
+			"name": "Corporate",
+            "orders": [
+                {
+                    "id": "2000",
+                    "name": "CorporateType",
+                    "dataType":"Text"
+                },
+                {
+                    "id": "2001",
+                    "name": "Location",
+                    "dataType":"Whole Number"
+                },
+                {
+                    "id": "2002",
+                    "name": "CountryFlag",
+                    "dataType":"Flag"
+                }
+            ]
+		},
+		{
+			"name": "District",
+            "orders": [
+                {
+                    "id": "2000",
+                    "name": "DistrictType",
+                    "dataType":"Text"
+                },
+                {
+                    "id": "2001",
+                    "name": "Location",
+                    "dataType":"Whole Number"
+                },
+                {
+                    "id": "2002",
+                    "name": "DistrictFlag",
+                    "dataType":"Flag"
+                }
+            ]
+		},
+		{
+			"name": "Store",
+            "orders": [
+                {
+                    "id": "2000",
+                    "name": "StoreType",
+                    "dataType":"Text"
+                },
+                {
+                    "id": "2001",
+                    "name": "SquareFeet",
+                    "dataType":"Whole Number"
+                },
+                {
+                    "id": "2002",
+                    "name": "RestroomFlag",
+                    "dataType":"Flag"
+                }
+            ]
+		}
+	]
+}

@@ -1,0 +1,43 @@
+<p-panel header="Tropical Smoothie CSI">
+    <div class="card">
+        <h5>Favorites</h5>
+        <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+    </div>
+    
+      
+    <p-toolbar>
+        <div class="p-toolbar-group-left">
+
+            <p-button (click)="showBasicDialog()" icon="pi pi-upload" label="Update"></p-button>
+                <p-dialog header="Update" [(visible)]="displayBasic" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+                [draggable]="false" [resizable]="false">
+                    <p>Please upload a file to update your hierarchy. The information in the file will overwrite your
+                    existing hierarchy. Max file size is 650MB (.CSV only).
+                    </p>
+                    <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-times" (click)="displayBasic=false" label="Cancel" styleClass="p-button"></p-button>
+                        <p-button (click)="displayBasic=false" label="Update" styleClass="p-button"></p-button>
+                    </ng-template>
+                </p-dialog>
+            <p-button (click)="showExportDialog()" label="Export" icon="pi pi-external-link" styleClass="p-button-success"></p-button> 
+            <p-dialog header="Export" [(visible)]="displayExport" [style]="{width: '50vw'}">
+                <p>Your export has been sent to you via email with a link to download. This may take several minutes.</p>
+                <ng-template pTemplate="footer">
+                    <p-button (click)="displayExport=false" label="Ok" styleClass="p-button"></p-button>
+                </ng-template>
+            </p-dialog>               
+        </div>
+    </p-toolbar>
+    
+              <p-tabView style="width: 100%;">
+                    <p-tabPanel style="width: 100%;" header="View tree">
+                        <app-tree-view></app-tree-view>
+                    </p-tabPanel>
+                    <p-tabPanel header="View hierarchy">
+                        <app-orgchart></app-orgchart>
+                    </p-tabPanel>
+                    <p-tabPanel header="Manage Attributes">
+                        <app-attribute-view></app-attribute-view>
+                    </p-tabPanel>
+                </p-tabView>
+</p-panel>
